@@ -1,0 +1,5 @@
+name: main
+title: Методичні вказівки
+version: '1.0'
+nav:
+  - modules/ROOT/nav.adoc
