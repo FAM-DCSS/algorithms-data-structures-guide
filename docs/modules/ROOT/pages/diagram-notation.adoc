@@ -1,3 +1,93 @@
 = Вимоги по оформленню діаграм
 
-== Прості нотації
+== Введенняд данних
+Передача вхідних данних до алгоритму.
+
+Користувач має ввести імʼя (name) та вік (age), при чому імʼя це рядок, а вік - це натуральне число.
+
+image::diagram-example/simple-input-type.svg[]
+
+.Відповідники у коді
+[%collapsible]
+====
+.Зчитування імені та віку з консолі.
+[source, csharp]
+----
+string name = Console.ReadLine();
+int age = int.Parse(Console.ReadLine())
+----
+[NOTE]
+Деталі зчитування з консолі не є значущими для алгоритму, а тому можуть бути виключені з блок-схеми.
+
+.Передача імені та віку в якості аргументів у метод.
+[source, csharp]
+----
+public Student createStudent(string name, int age) {
+    ....
+}
+----
+====
+
+== Опис структур/типів/обʼєктів.
+// Спеціальний тип - як відповідник англійському слову custom
+При використанні у алгоритмі спеціальних типів даних для розуміння читачем її деталей, вона описується як анотація до процесу в якому створюється або вперше використовується.
+
+У студента є дві властивості імʼя та вік.
+
+image::main:ROOT:diagram-example/object-structure.svg[]
+
+.Відповідник у коді
+[%collapsible]
+====
+[source, csharp]
+----
+public class Student
+{
+    public int Age { get; set; }
+    public string FirstName { get; set; }
+
+    public Student(int age, string firstName)
+    {
+        Age = age;
+        FirstName = firstName;
+    }
+}
+----
+====
+
+== Процес створення спеціальних структур.
+
+Створюється новий обʼєкт - студент, з вказанням віку та імені.
+
+image:main:ROOT:diagram-example/object-creation-from-input.svg[]
+
+.Відповідник у коді
+[%collapsible]
+====
+[source, csharp]
+----
+var student = new Student("Bob", 18);
+----
+====
+
+== Перевірка умови
+
+Перевірка чи значення змінної не дорівнює порожньому рядку.
+
+image::diagram-example/simple-condition.svg[]
+
+.Відповідник у коді
+[%collapsible]
+====
+[NOTE]
+Якщо в алгоритмі не передбачена окрема поведінка для умови коли `input` дорівнює `null`, а це є лише технічною деталлю реалізації, то така перевірка може бути виключена з блок схема.
+
+[source, csharp]
+----
+if (input == null || input.Equals("")) {
+    // true
+} else {
+    // false
+}
+----
+====
