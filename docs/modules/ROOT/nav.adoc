@@ -1,1 +1,2 @@
 * xref:diagram-notation.adoc[Загальні правила для побудови діаграм]
+* xref:evaluation-guideline.adoc[Критерії оцінки лабораторних робіт]
