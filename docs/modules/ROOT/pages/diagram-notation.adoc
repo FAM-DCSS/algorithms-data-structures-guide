@@ -1,6 +1,6 @@
 = Вимоги по оформленню діаграм
 
-== Введенняд данних
+== Введення данних
 Передача вхідних данних до алгоритму.
 
 Користувач має ввести імʼя (name) та вік (age), при чому імʼя це рядок, а вік - це натуральне число.
@@ -74,13 +74,13 @@ var student = new Student("Bob", 18);
 
 Перевірка чи значення змінної не дорівнює порожньому рядку.
 
-image::diagram-example/simple-condition.svg[]
+image::diagram-example/condition-simple.svg[]
 
 .Відповідник у коді
 [%collapsible]
 ====
 [NOTE]
-Якщо в алгоритмі не передбачена окрема поведінка для умови коли `input` дорівнює `null`, а це є лише технічною деталлю реалізації, то така перевірка може бути виключена з блок схема.
+Якщо в алгоритмі не передбачена окрема поведінка для умови коли `input` дорівнює `null`, а це є лише технічною деталлю реалізації, то така перевірка може бути виключена з блок схеми.
 
 [source, csharp]
 ----
@@ -89,5 +89,62 @@ if (input == null || input.Equals("")) {
 } else {
     // false
 }
+----
+====
+
+Перевірка декількох умов з логічним оператором "АБО"
+
+
+
+image::diagram-example/condition-or.svg[]
+
+.Відповідник у коді
+[%collapsible]
+====
+
+[source, csharp]
+----
+if (a > b || a > c) {
+    // process 1
+} else {
+    // process 2
+}
+----
+====
+
+Перевірка декількох умов з логічним оператором "І"
+
+image::diagram-example/condition-and.svg[]
+
+.Відповідник у коді
+[%collapsible]
+====
+
+[source, csharp]
+----
+if (a >= b) {
+    // process 1
+} else {
+    // process 2
+}
+----
+====
+
+Перевірка декількох умов if-else-if
+
+image::diagram-example/condition-if-else-if.svg[]
+
+.Відповідник у коді
+[%collapsible]
+====
+
+[source, csharp]
+----
+if (student = null) {
+    student = new Student();
+} else if (student.Age < 18) {
+    // process 1
+}
+// process 2
 ----
 ====
